@@ -1,0 +1,17 @@
+site_name: Social Video Summarizer
+repo_url: https://github.com/lingbow/social-video-summarizer
+site_description: Efficient, metadata-aware summarization for short-form social media videos.
+nav:
+  - Home: index.md
+  - Quick Start: quickstart.md
+  - Algorithm: algorithm.md
+  - Keyframes: keyframes.md
+  - Providers: providers.md
+  - Batch Processing: batch_processing.md
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - toc:
+      permalink: true

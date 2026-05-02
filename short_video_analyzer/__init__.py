@@ -2,11 +2,11 @@
 
 from .config import KeyframeConfig, SummarizerConfig
 from .result import SummaryResult
-from .summarizer import SocialVideoSummarizer, VideoMetadata
+from .summarizer import ShortVideoAnalyzer, VideoMetadata
 
 __all__ = [
     "KeyframeConfig",
-    "SocialVideoSummarizer",
+    "ShortVideoAnalyzer",
     "SummarizerConfig",
     "SummaryResult",
     "VideoMetadata",

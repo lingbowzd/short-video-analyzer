@@ -38,7 +38,7 @@ def extract_scene_keyframes(
         from scenedetect import AdaptiveDetector, SceneManager, open_video
     except ImportError as exc:
         raise ImportError(
-            "Install video dependencies with `pip install social-video-summarizer[video]`."
+            "Install video dependencies with `pip install short-video-analyzer[video]`."
         ) from exc
 
     video_path = Path(video_path)
@@ -79,7 +79,7 @@ def extract_sampled_keyframes(
         import numpy as np
     except ImportError as exc:
         raise ImportError(
-            "Install video dependencies with `pip install social-video-summarizer[video]`."
+            "Install video dependencies with `pip install short-video-analyzer[video]`."
         ) from exc
 
     video_path = Path(video_path)

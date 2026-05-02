@@ -13,7 +13,7 @@ class WhisperTranscriber:
             import whisper
         except ImportError as exc:
             raise ImportError(
-                "Install Whisper dependencies with `pip install social-video-summarizer[whisper]`."
+                "Install Whisper dependencies with `pip install short-video-analyzer[whisper]`."
             ) from exc
         self.model = whisper.load_model(model_name)
 

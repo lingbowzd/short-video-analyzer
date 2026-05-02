@@ -3,7 +3,7 @@
 The toolkit supports configurable keyframe strategies:
 
 ```python
-SocialVideoSummarizer(
+ShortVideoAnalyzer(
     keyframes={
         "strategy": "scene",
         "scene_threshold": 3.5,

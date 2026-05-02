@@ -13,7 +13,7 @@ class AzureSpeechTranscriber:
             import azure.cognitiveservices.speech as speechsdk
         except ImportError as exc:
             raise ImportError(
-                "Install Azure dependencies with `pip install social-video-summarizer[azure]`."
+                "Install Azure dependencies with `pip install short-video-analyzer[azure]`."
             ) from exc
         self.speechsdk = speechsdk
         self.speech_key = speech_key

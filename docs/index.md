@@ -1,6 +1,6 @@
-# Social Video Summarizer
+# Short Video Analyzer
 
-Social Video Summarizer is an efficient, metadata-aware toolkit for summarizing
+Short Video Analyzer is an efficient, metadata-aware toolkit for summarizing
 short-form social media videos.
 
 It is optimized for research workflows where users need scalable summaries for

@@ -1,16 +1,16 @@
 """Summarize one video with OpenAI.
 
 Requires:
-    pip install social-video-summarizer[openai]
+    pip install short-video-analyzer[openai]
     export OPENAI_API_KEY=...
 """
 
-from social_video_summarizer import SocialVideoSummarizer
-from social_video_summarizer.providers.openai import OpenAISummaryProvider
+from short_video_analyzer import ShortVideoAnalyzer
+from short_video_analyzer.providers.openai import OpenAISummaryProvider
 
 
 def main() -> None:
-    summarizer = SocialVideoSummarizer(
+    summarizer = ShortVideoAnalyzer(
         keyframes={"strategy": "none"},
         summary_provider=OpenAISummaryProvider(model="gpt-4o-mini"),
     )

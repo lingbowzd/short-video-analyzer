@@ -26,7 +26,7 @@ class VideoMetadata:
     manual_keyframes: list[str] | None = None
 
 
-class SocialVideoSummarizer:
+class ShortVideoAnalyzer:
     """Efficient, metadata-aware summarizer for short-form social videos."""
 
     def __init__(

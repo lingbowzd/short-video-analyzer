@@ -1,9 +1,9 @@
 # Quick Start
 
 ```python
-from social_video_summarizer import SocialVideoSummarizer
+from short_video_analyzer import ShortVideoAnalyzer
 
-summarizer = SocialVideoSummarizer(keyframes={"strategy": "none"})
+summarizer = ShortVideoAnalyzer(keyframes={"strategy": "none"})
 
 result = summarizer.summarize(
     video_path="example.mp4",
@@ -23,10 +23,10 @@ subtitles, or hashtags are unavailable, simply omit those arguments.
 Add a summary provider when you are ready to call a model:
 
 ```python
-from social_video_summarizer import SocialVideoSummarizer
-from social_video_summarizer.providers.openai import OpenAISummaryProvider
+from short_video_analyzer import ShortVideoAnalyzer
+from short_video_analyzer.providers.openai import OpenAISummaryProvider
 
-summarizer = SocialVideoSummarizer(
+summarizer = ShortVideoAnalyzer(
     keyframes={"strategy": "scene", "max_keyframes": 8},
     summary_provider=OpenAISummaryProvider(model="gpt-4o-mini"),
 )

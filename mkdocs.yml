@@ -1,5 +1,5 @@
-site_name: Social Video Summarizer
-repo_url: https://github.com/lingbow/social-video-summarizer
+site_name: Short Video Analyzer
+repo_url: https://github.com/lingbow/short-video-analyzer
 site_description: Efficient, metadata-aware summarization for short-form social media videos.
 nav:
   - Home: index.md

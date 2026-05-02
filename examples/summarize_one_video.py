@@ -1,10 +1,10 @@
 """Summarize one short-form social video without calling external APIs."""
 
-from social_video_summarizer import SocialVideoSummarizer
+from short_video_analyzer import ShortVideoAnalyzer
 
 
 def main() -> None:
-    summarizer = SocialVideoSummarizer(keyframes={"strategy": "none"})
+    summarizer = ShortVideoAnalyzer(keyframes={"strategy": "none"})
     result = summarizer.summarize(
         video_path="example.mp4",
         duration=20.0,

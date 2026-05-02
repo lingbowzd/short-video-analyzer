@@ -1,5 +1,5 @@
-from social_video_summarizer import SocialVideoSummarizer
-from social_video_summarizer.prompts import build_summary_input
+from short_video_analyzer import ShortVideoAnalyzer
+from short_video_analyzer.prompts import build_summary_input
 
 
 def test_build_summary_input_uses_social_metadata():
@@ -15,7 +15,7 @@ def test_build_summary_input_uses_social_metadata():
 
 
 def test_summarizer_without_provider_returns_summary_input():
-    summarizer = SocialVideoSummarizer(keyframes={"strategy": "none"})
+    summarizer = ShortVideoAnalyzer(keyframes={"strategy": "none"})
     result = summarizer.summarize(
         "example.mp4",
         duration=10,
@@ -30,7 +30,7 @@ def test_summarizer_without_provider_returns_summary_input():
 
 
 def test_result_to_features():
-    summarizer = SocialVideoSummarizer(keyframes={"strategy": "none"})
+    summarizer = ShortVideoAnalyzer(keyframes={"strategy": "none"})
     result = summarizer.summarize(
         description="A fun day #vlog",
         transcript="hello world",

@@ -11,7 +11,7 @@ from .features.text import extract_text_features
 
 @dataclass
 class SummaryResult:
-    """Output object returned by `SocialVideoSummarizer.summarize`."""
+    """Output object returned by `ShortVideoAnalyzer.summarize`."""
 
     summary: str | None
     summary_input: str

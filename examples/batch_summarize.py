@@ -1,6 +1,6 @@
 """Simple batch summarization pattern."""
 
-from social_video_summarizer import SocialVideoSummarizer
+from short_video_analyzer import ShortVideoAnalyzer
 
 
 def main() -> None:
@@ -19,7 +19,7 @@ def main() -> None:
         },
     ]
 
-    summarizer = SocialVideoSummarizer(keyframes={"strategy": "none"})
+    summarizer = ShortVideoAnalyzer(keyframes={"strategy": "none"})
     for index, row in enumerate(rows):
         result = summarizer.summarize(**row)
         result.save_json(f"outputs/summary_{index:03d}.json")

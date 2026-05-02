@@ -1,6 +1,6 @@
-# Social Video Summarizer
+# Short Video Analyzer
 
-Social Video Summarizer is an efficient, metadata-aware toolkit for summarizing
+Short Video Analyzer is an efficient, metadata-aware toolkit for summarizing
 short-form social media videos. It is designed primarily for TikTok-style data
 and for researchers or dataset builders who need scalable video summaries
 without running expensive frame-by-frame analysis.
@@ -29,12 +29,74 @@ file and description, and that is a valid input.
 - Batch-friendly outputs for research datasets.
 - Optional lightweight post-summary features, kept secondary to summarization.
 
+## Installation
+
+Short Video Analyzer requires Python 3.9 or later.
+
+### Install From PyPI
+
+After the package is published to PyPI, install it with:
+
+```bash
+pip install short-video-analyzer
+```
+
+### Install From GitHub
+
+Before the PyPI release, or if you want the latest development version, install
+directly from GitHub:
+
+```bash
+pip install git+https://github.com/lingbow/short-video-analyzer.git
+```
+
+### Install From a Local Clone
+
+```bash
+git clone https://github.com/lingbow/short-video-analyzer.git
+cd short-video-analyzer
+pip install -e .
+```
+
+### Optional Dependencies
+
+Install only the backends you need:
+
+```bash
+# Video/keyframe extraction
+pip install "short-video-analyzer[video]"
+
+# OpenAI summary provider
+pip install "short-video-analyzer[openai]"
+
+# Azure Speech-to-Text provider
+pip install "short-video-analyzer[azure]"
+
+# Local Whisper transcription
+pip install "short-video-analyzer[whisper]"
+
+# Local VLM dependencies
+pip install "short-video-analyzer[local]"
+
+# Everything
+pip install "short-video-analyzer[all]"
+```
+
+For local development:
+
+```bash
+pip install -e ".[dev]"
+```
+
 ## Quick Start
 
-```python
-from social_video_summarizer import SocialVideoSummarizer
+This example does not call any external API. It formats the available video
+metadata into the prompt input that a summary provider would use:
 
-summarizer = SocialVideoSummarizer(
+```python
+from short_video_analyzer import ShortVideoAnalyzer
+
+summarizer = ShortVideoAnalyzer(
     keyframes={
         "strategy": "scene",
         "max_keyframes": 8,
@@ -54,19 +116,35 @@ result = summarizer.summarize(
 print(result.summary_input)
 ```
 
-Configure a provider to generate summaries:
+To generate summaries with OpenAI, install the OpenAI extra and set your API
+key:
+
+```bash
+pip install "short-video-analyzer[openai]"
+export OPENAI_API_KEY="your-api-key"
+```
+
+Then configure the provider:
 
 ```python
-from social_video_summarizer import SocialVideoSummarizer
-from social_video_summarizer.providers.openai import OpenAISummaryProvider
+from short_video_analyzer import ShortVideoAnalyzer
+from short_video_analyzer.providers.openai import OpenAISummaryProvider
 
-summarizer = SocialVideoSummarizer(
+summarizer = ShortVideoAnalyzer(
     summary_provider=OpenAISummaryProvider(model="gpt-4o-mini"),
 )
 
 result = summarizer.summarize("example.mp4", description="A day in my life")
 print(result.summary)
 ```
+
+To extract keyframes from a video file, install the video extra:
+
+```bash
+pip install "short-video-analyzer[video]"
+```
+
+Then use a keyframe strategy such as `scene`, `interval`, or `uniform`.
 
 ## Output
 
@@ -105,23 +183,6 @@ features = result.to_features()
 
 Topic modeling, emotion classification, and embeddings can be added later as
 optional modules.
-
-## Installation
-
-```bash
-pip install social-video-summarizer
-```
-
-Optional dependencies:
-
-```bash
-pip install social-video-summarizer[video]
-pip install social-video-summarizer[openai]
-pip install social-video-summarizer[azure]
-pip install social-video-summarizer[whisper]
-pip install social-video-summarizer[local]
-pip install social-video-summarizer[all]
-```
 
 ## Scope
 

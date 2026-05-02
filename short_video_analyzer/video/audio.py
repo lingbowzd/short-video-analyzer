@@ -12,7 +12,7 @@ def extract_audio(video_path: str | Path, output_path: str | Path) -> Path:
         from moviepy.editor import VideoFileClip
     except ImportError as exc:
         raise ImportError(
-            "Install video dependencies with `pip install social-video-summarizer[video]`."
+            "Install video dependencies with `pip install short-video-analyzer[video]`."
         ) from exc
 
     video_path = Path(video_path)

@@ -20,7 +20,7 @@ class OpenAISummaryProvider:
                 from openai import OpenAI
             except ImportError as exc:
                 raise ImportError(
-                    "Install OpenAI dependencies with `pip install social-video-summarizer[openai]`."
+                    "Install OpenAI dependencies with `pip install short-video-analyzer[openai]`."
                 ) from exc
             client = OpenAI()
         self.client = client
